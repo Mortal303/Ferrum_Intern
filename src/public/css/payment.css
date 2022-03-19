@@ -1,0 +1,48 @@
+.gradient-custom {
+    background: radial-gradient(50% 123.47% at 50% 50%, #00FF94 0%, #720059 100%), linear-gradient(121.28deg, #669600 0%, #FF0000 100%), linear-gradient(360deg,
+            #0029FF 0%, #8FFF00 100%), radial-gradient(100% 164.72% at 100% 100%, #6100FF 0%, #00FF57 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    height: 85vh;
+    position: relative;
+    top: 0;
+}
+
+.widthPaymentCard{
+    width: 100%;
+}
+
+#payment_product{
+    all: none!important;
+}
+
+#rzp-button1{
+    /* background-color: transparent;
+    background-image: radial-gradient(at top left, #670093 9%, #f2295b 100%); */
+    background: radial-gradient(50% 123.47% at 50% 50%, #00FF94 0%, #720059 100%), linear-gradient(121.28deg, #669600 0%, #FF0000 100%), linear-gradient(360deg,
+            #0029FF 0%, #8FFF00 100%), radial-gradient(100% 164.72% at 100% 100%, #6100FF 0%, #00FF57 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+    border-style: solid;
+    border-color: #B1B1B1;
+    border-radius: 50px 50px 50px 50px;
+    padding: 20px 30px 20px 30px;
+    font-family: "Karla", Sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1em;
+    letter-spacing: 1px;
+    /* color: white; */
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+#rzp-button1:hover{
+    cursor: pointer;
+    /* background-image: radial-gradient(at bottom right, #670093 9%, #f2295b 100%); */
+    background: radial-gradient(50% 123.47% at 50% 50%, #00FF94 0%, #720059 100%), linear-gradient(121.28deg, #669600 0%, #FF0000 100%), linear-gradient(360deg,
+            #0029FF 0%, #8FFF00 100%), radial-gradient(100% 164.72% at 100% 100%, #6100FF 0%, #00FF57 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+    background-blend-mode: screen, color-dodge, overlay, difference, normal;
+}

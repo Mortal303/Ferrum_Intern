@@ -1,0 +1,374 @@
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h1>Hello, <span>Welcome Here</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+                <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Home</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /# column -->
+            </div>
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row mx-auto">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
+                                </div>
+                                <div class="stat-content dib">
+                                    <!-- <div class="stat-text">Request Installation</div> -->
+                                    <div class="stat-digit"><a href="https://ferrumkart.com/">Purchase a new
+                                            product</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                </div>
+                                <div class="stat-content dib">
+                                    <!-- <div class="stat-text">New Customer</div> -->
+                                    <div class="stat-digit"><a href="/service-page">Request Service</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
+                                </div>
+                                <div class="stat-content dib">
+                                    <!-- <div class="stat-text">Active Projects</div> -->
+                                    <div class="stat-digit"><a href="chart-morris.html">Request Installation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
+                                <div class="stat-content dib">
+                                    <!-- <div class="stat-text">Referral</div> -->
+                                    <div class="stat-digit"><a href="chart-flot.html">Become a premium member</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-lg-9 shadow p-3 mb-5 bg-body rounded mt-5">
+
+                        <!-- <div class="card"> -->
+                        <div class="card-title">
+                            <h4>New User! Enter details </h4>
+
+                        </div>
+                        <form>
+                            <div>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationDefault01">First name</label>
+                                        <input type="text" class="form-control" id="validationDefault01"
+                                            value="{{user.firstName}}" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationDefault02">Last name</label>
+                                        <input type="text" class="form-control" id="validationDefault02"
+                                            value="{{user.lastName}}" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="validationDefaultUsername">Username</label>
+                                        <input type="email" class="form-control" id="validationDefault02"
+                                            value="{{user.email}}"  readonly>
+
+                                    </div>
+                                    <!-- <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required> -->
+                                </div>
+                                <!-- </div> -->
+                                <!-- </div> -->
+                                <div class="form-row">
+                                    <div class="col-md-3 mb-3">
+                                        <label for="validationDefault03">Enter your phone number:</label>
+                                        <input type="tel" class="form-control" id="validationDefault03"
+                                            value="{{user.phone}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="validationDefault04">City</label>
+                                        <input type="text" class="form-control" id="validationDefault04"
+                                            placeholder="City" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="validationDefault05">State</label>
+                                        <input type="text" class="form-control" id="validationDefault05"
+                                            placeholder="State" required>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label for="validationDefault06">PIN Code</label>
+                                        <input type="text" class="form-control" id="validationDefault06"
+                                            placeholder="PIN Code" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
+                                        required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Agree to <a href="https://ferrumkart.com/privacy-policy-2/"
+                                            style="color:blue;">terms and
+                                            conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </form>
+                        <!-- <div class="card-body">
+                                        <div class="ct-bar-chart m-t-30"></div>
+                                    </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-9  shadow p-3 mb-5 bg-body rounded mt-5">
+                        <div class="card bg-primary">
+                            <div class="weather-widget">
+                                <div id="weather-one" class="weather-one p-22"></div>
+                            </div>
+                        </div>
+                        <div >
+                            <div class="card">
+                                <div class="testimonial-widget-one p-17">
+                                    <div class="testimonial-widget-one owl-carousel owl-theme">
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial-text">
+                                                    <i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet,
+                                                    consectetur adipisicing elit, sed do eiusmod tempor
+                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim veniam, quis
+                                                    nostrud exercitation <i class="fa fa-quote-right"></i>
+                                                </div>
+                                                <img class="testimonial-author-img" src="static/images/avatar/1.jpg"
+                                                    alt="" />
+                                                <div class="testimonial-author">TYRION LANNISTER</div>
+                                                <div class="testimonial-author-position">Founder-Ceo. Dell Corp
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /# row -->
+        <div class="row mt-5">
+            <div class="col-lg-3">
+                <div class="card p-0">
+                    <div class="stat-widget-three home-widget-three">
+                        <div class="stat-icon bg-facebook">
+                            <a href="https://www.facebook.com/FerrumHOfficial"> <i class="ti-facebook"></i></a>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-digit">8,268</div>
+                            <div class="stat-text">Likes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card p-0">
+                    <div class="stat-widget-three home-widget-three">
+                        <div class="stat-icon bg-youtube">
+                            <a href="https://www.youtube.com/channel/UCaM5BeWKpgU4sNNoay91WaQ"> <i
+                                    class="ti-youtube"></i></a>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-digit">12,545</div>
+                            <div class="stat-text">Subscribes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card p-0">
+                    <div class="stat-widget-three home-widget-three">
+                        <div class="stat-icon bg-twitter">
+                            <a href="https://twitter.com/FerrumHOfficial"> <i class="ti-twitter"></i></a>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-digit">7,982</div>
+                            <div class="stat-text">Tweets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card p-0">
+                    <div class="stat-widget-three home-widget-three">
+                        <div class="stat-icon bg-danger">
+                            <a href="https://www.linkedin.com/company/ferrumhousewares"> <i class="ti-linkedin"></i></a>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-digit">9,658</div>
+                            <div class="stat-text">Followers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /# row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer" style="align-content: center;">
+                <p align="center">2021 © Powered By
+                    <a href="#">GreatLoop</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+
+<!--Start of Tawk.to Script-->
+<!--End of Tawk.to Script-->
+<script src="static/js/lib/jquery.min.js"></script>
+<script src="static/js/lib/calendar-2/moment.latest.min.js"></script>
+<script src="static/js/lib/calendar-2/pignose.calendar.min.js"></script>
+{{!--
+<script src="static/js/lib/calendar-2/pignose.init.js"></script> --}}
+
+
+<script src="static/js/lib/weather/jquery.simpleWeather.min.js"></script>
+<script src="static/js/lib/weather/weather-init.js"></script>
+<script src="static/js/lib/circle-progress/circle-progress.min.js"></script>
+<script src="static/js/lib/circle-progress/circle-progress-init.js"></script>
+<script src="static/js/lib/chartist/chartist.min.js"></script>
+<script src="static/js/lib/sparklinechart/jquery.sparkline.min.js"></script>
+<script src="static/js/lib/sparklinechart/sparkline.init.js"></script>
+<script src="static/js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="static/js/lib/owl-carousel/owl.carousel-init.js"></script>
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/61c5b98fc82c976b71c367ef/1fnm5pn5v';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>

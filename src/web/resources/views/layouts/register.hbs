@@ -1,0 +1,68 @@
+<body class="bg-primary">
+
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-content">
+                        <div class="login-form">
+                            <center>
+                                <div id="msg">
+                            </center>
+                            <h4>Register to Administration</h4>
+                            <form onsubmit="register(); return false;">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                        required>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Personal Info</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                    <input type="number" class="form-control" id="phone" placeholder="Phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password"
+                                        onKeyUp="checkPasswordStrength();" required>
+                                    <input type="password" class="form-control" id="repeatPassword"
+                                        placeholder="Repeat Password" required>
+                                </div>
+                                <div class="" id="password-strength-status"></div>
+
+                                &nbsp;<input type="checkbox" onclick="showPassword()"><strong style="color: black;">
+                                    Show Password</strong>
+
+                                {{!-- <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Show Password
+                                    </label>
+                                </div> --}}
+                                {{!-- <div class="social-login-content">
+                                    <div class="social-button">
+                                        <button type="button"
+                                            class="btn btn-primary bg-facebook btn-flat btn-addon m-b-10"><i
+                                                class="ti-facebook"></i>Register with facebook</button>
+                                        <button type="button"
+                                            class="btn btn-primary bg-twitter btn-flat btn-addon m-t-10"><i
+                                                class="ti-twitter"></i>Register with twitter</button>
+                                    </div>
+                                </div> --}}
+                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30"
+                                    id="registerButton">Register
+                                    Account</button>
+                            </form>
+                            <div class="register-link m-t-15 text-center d-flex justify-content-between">
+                                <p>Already have account ? <a href="/login"> <strong>Sign in</strong></a></p>
+                                <a class="medium ml-2" href="/forgotpassword"><strong>Forgot Password?</strong></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/app/auth/register.js"></script>
+</body>

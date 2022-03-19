@@ -1,0 +1,14 @@
+{
+    "data":[
+        {
+            "productName":"product_1",
+            "price":100
+        },{
+            "productName":"product_2",
+            "price":200
+        },{
+            "productName":"product_3",
+            "price":300
+        }
+    ]
+}

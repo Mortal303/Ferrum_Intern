@@ -1,0 +1,33 @@
+APP_NAME="Ferrum"
+APP_LOG="dev"
+APP_PORT=3000
+APP_URL=http://127.0.0.1
+APP_SECURE=false
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=ferrum
+DB_USERNAME=root
+DB_PASSWORD=P@ssword123
+
+## LESS SECURE APP SHOULD BE ENABLED IN THE PARTICULAR EMAIL ADRRESS 
+
+MAIL_FROM="abc@support.com"   # To Be Used Of Support's Email By Which We Need To Send Mail To Users
+MAIL_HOST=smtp.gmail.com   # Host Can Be Same Or Differrent Based On Hosting Service Like AWS, Digitalocean Etc.
+MAIL_PORT=587    # Host Can Be Same Or Differrent Based On Hosting Service Like AWS, Digitalocean Etc. Generally 587 || 25
+MAIL_USERNAME=abc@support.com   # To Be Used Of Support's Email By Which We Need To Send Mail To Users
+MAIL_PASSWORD=WecandoAnything14;   # Password Of That Particular Email Id
+MAIL_BATCHING=200
+MAIL_TO=abcd@support.com   # To Be Used Of Support's Email By Which We Need To Send Mail To Users
+
+MAIL_RUA=rua.example.com
+MAIL_RUF=ruf.example.com
+
+##Phone number starting with country code followed by number
+PHONE=911234567890
+
+## SHOULD BE RETREIVED FROM ADMIN'S RAZORPAY API SECTION
+
+RAZOR_ID=rzp_test_vyAFTcOeKBiCq5   #To Be Used From Admin's Id
+RAZOR_SECRET=FrHaiRcQ9aFatfdDaSakwN6o    #To Be Used From Admin's Id

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Ferrum Service</title>
+  <!-- Styles -->
+  <link href="/static/css/lib/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/css/lib/themify-icons.css" rel="stylesheet">
+  <link href="/static/css/lib/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/lib/helper.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  {{!-- {{{block 'head'}}} --}}
+</head>
+
+<body id="page-top">
+  <div id="wrapper">
+    {{!-- {{> header}} --}}
+    {{{ body }}}
+    {{> footer}}
+  </div>
+  <script>
+    function checkPasswordStrength() {
+      var number = /([0-9])/;
+      var alphabets = /([a-zA-Z])/;
+      var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+      if ($("#password").val().length < 6) {
+        $("#password-strength-status").removeClass();
+        $("#password-strength-status").addClass("weak-password text-danger");
+        $("#password-strength-status").html(
+          "Weak (should be atleast 6 characters.)"
+        );
+        $("#registerButton").prop('disabled', true);
+      } else {
+        if (
+          $("#password").val().match(number) &&
+          $("#password").val().match(alphabets) &&
+          $("#password").val().match(special_characters)
+        ) {
+          $("#password-strength-status").removeClass();
+          $("#password-strength-status").addClass("strong-password text-success");
+          $("#password-strength-status").html("Strong");
+          $("#registerButton").prop('disabled', false);
+
+        } else {
+          $("#password-strength-status").removeClass();
+          $("#password-strength-status").addClass("medium-password text-warning");
+          $("#password-strength-status").html(
+            "Medium (should include alphabets, numbers and special characters.)"
+          );
+          $("#registerButton").prop('disabled', false);
+
+        }
+      }
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/static/bundles/libscripts.bundle.js"></script>
+  <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+  <script src="/static/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+  {{!--
+  <script src="static/bundles/knob.bundle.js"></script> <!-- Jquery Knob-->
+  <script src="static/bundles/jvectormap.bundle.js"></script> <!-- JVectorMap Plugin Js -->
+  <script src="static/bundles/morrisscripts.bundle.js"></script> <!-- Morris Plugin Js -->
+  <script src="static/bundles/sparkline.bundle.js"></script> <!-- sparkline Plugin Js -->
+  <script src="static/bundles/doughnut.bundle.js"></script> --}}
+
+  {{!--
+  <script src="static/bundles/mainscripts.bundle.js"></script>
+  <script src="static/js/pages/index.js"></script> --}}
+  {{!--
+  <script src="../../static/vendor/jquery/jquery.min.js"></script> --}}
+  {{!--
+  <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/js/api.js"></script>
+
+</body>
+
+</html>

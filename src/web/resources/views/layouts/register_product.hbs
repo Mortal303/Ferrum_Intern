@@ -1,0 +1,88 @@
+<script src="https://cdn.jsdelivr.net/npm/scandit-sdk@5.x"></script>
+
+<div id="msg"></div>
+
+<div style="height: 1500px;" id="invoice" class="effect2 m-t-120 m-l-50">
+    <h2>Your Past Product List</h2>
+    <table id="registeredProducts">
+        <tr>
+            <th>S.N.</th>
+            <th>Product Name</th>
+            <th>Scanned Barcode</th>
+            <th>Uploaded Invoice</th>
+        </tr>
+    </table>
+
+
+    <h2>Form To Register A New Product</h2>
+    <form onsubmit="registerProduct(); return false;">
+        <div class="">
+            <span class="m-r-50">Serial Number</span>
+            <br>
+            <input type="number" id="sn" placeholder="S.NO." required>
+        </div>
+        <br>
+        <div class="">
+            <span class="m-r-50">Date</span>
+            <br>
+            <input type="date" id="date" placeholder="Date" required>
+        </div>
+        <br>
+        <div class="">
+            <span class="m-r-50">Product Name</span>
+            <br>
+            <input type="text" id="productname" placeholder="Type Your Product Name" required>
+        </div>
+        <br>
+        <div class="files">
+            <span class="m-r-50">Upload File</span>
+            <br>
+            <input type="file" class="shadow-sm" id="file" name="fileBulk" accept="file/*" placeholder="Upload Invoice"
+                required>
+            <button type="button" onclick="uploadFile();">Upload</button>
+        </div>
+        <br>
+        <div class="">
+            <span class="m-r-50">Scan Barcode</span>
+            <br>
+            <input id="bar_button" type="button" onclick="show();" value="Scan Barcode" required>
+            <div id="scandit-barcode-picker" style="max-width: 1280px; max-height: 80%;"></div>
+        </div>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+    <div class="output"></div>
+</div>
+
+<script src="../static/vendor/jquery/jquery.min.js"></script>
+<script src="../static/js/app/register.product.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#scandit-barcode-picker').css("display", "none");
+    });
+    var barcodeResults;
+    function show() {
+        var called = false;
+        $('#scandit-barcode-picker').css("display", "block");
+        ScanditSDK.configure("AflhLGbDR0ToHBjdzBonjLk82euRNWE//jpC2yBly5WmWCDu6TsAeEpVpsssTVdq1UiZp2o1RuxbRt/aLgywcENloLd3Y0DA5l5fZKFYK7gUA7QPijLKUlAFcB+9Fr3mNCSTy3lktkkQB+ym6MiquTEtvYSglOiZrInUV/6JOlIe9QaAlXxikWH3AGPPtlYXn0ELwmAAiGwVFCd3rXlmQtaHNMBXrMRmJrU2y0ScktfuKwV2pobIlNNZfR2SFkPRW3yJE/f6qx8tNKSEK/tSTDx839IgB+yv12Ht5cwz1g7VBOlFfqp5ka7mj9IoQc+8TFZ97idi9r/Idv53/8NpXxbJjMaI/3jl6ePTmc3jSLzEObf7uRuwGEa603tp3Gk1aK4SaFB4WpmPA15ksJk/zzoRUSIWu7Lt3KQyNsDMqDRyWTuBtxuqZZKeTG1c9F4ybLq/tQlxT+pBFCM0zrXdrBRlqnuAHVpmvMoFyLoK29OgbELjs2397opRD+nf8bnQw2VDgj3cnBMtaEhDi6P4MUK3hYOQo4JnKqFDAL8y+4PNVnHrvjMseRuX9fcD1jSvhqB3Lpy7NmfAi4vTE3oIXkI8IMC+V2sDNKiVWiTWLnfJG4dXeVYVgahv8XtOuLrxJe0kD/RaikeydUuKUfDfnw+TY/inwZsocAaUEXE1+iQ+lQkGsIvKFx8LUCHYM8rReH4ogR/eVti9dpMcB01xUX4dnPH5pmxP4ofqMBrCqbwV11VOfB0t0yr8xlQ7K4hRp6cayahSfxLBuSrRVeReLgJZNVNoa3mB2naGgCJJfg==", {
+            engineLocation: "https://cdn.jsdelivr.net/npm/scandit-sdk@5.x/build/",
+        })
+            .then(() => {
+                return ScanditSDK.BarcodePicker.create(document.getElementById("scandit-barcode-picker"), {
+                    // enable some common symbologies
+                    scanSettings: new ScanditSDK.ScanSettings({ enabledSymbologies: ["ean8", "ean13", "upca", "upce", "qr", "code128", "code39", "code93"] }),
+                });
+            })
+            .then((barcodePicker) => {
+                // barcodePicker is ready here, show a message every time a barcode is scanned
+                barcodePicker.on("scan", (scanResult) => {
+                    $('#scandit-barcode-picker').css("display", "none");
+                    if (!called) {
+                        barcodeResults = scanResult.barcodes[0].data;
+                        called = true;
+                    }
+                });
+            });
+    }
+
+</script>

@@ -1,0 +1,11 @@
+To Create Database (Only run this command first time)
+sequelize db:create
+
+To run pending migrations (Run whenever new migrations are created)
+sequelize db:migrate
+
+To create new migrations (Run whenever new table to be created)
+npx sequelize model:create --name MyUser --attributes first_name:string,last_name:string
+
+To add new coloum to a table(Run when you need to add a coloum to a table)
+npx sequelize migration:create --name name_of_your_migration
