@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     phone: DataTypes.STRING,
     password: DataTypes.STRING,
     email_verified: DataTypes.ENUM("0", "1"),
+    city: DataTypes.STRING,
+    state: DataTypes.STRING,
+    pincode: DataTypes.STRING,
+    address: DataTypes.STRING,
   }, {
     timestamps: true,
     paranoid: true

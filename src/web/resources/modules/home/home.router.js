@@ -20,6 +20,7 @@ homeRouter.route(["/service-page"]).get(jwtStrategy, userImplant, homeController
 homeRouter.route(["/service-details"]).get(jwtStrategy, userImplant, homeController.serviceDetail);
 homeRouter.route(["/track-service"]).get(jwtStrategy, userImplant, homeController.trackService);
 homeRouter.route(["/payment"]).get(jwtStrategy, userImplant, homeController.payment);
+homeRouter.route(["/success"]).get(jwtStrategy, userImplant, homeController.success);
 homeRouter.route(["/register"]).get(homeController.register);
 homeRouter.route(["/login"]).get(loginCheck(), homeController.login);
 homeRouter.route(["/forgotpassword"]).get(homeController.forgotpassword);

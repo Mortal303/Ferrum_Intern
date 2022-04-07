@@ -38,6 +38,12 @@ export default {
             phone:phone
         });
     },
+    async success(req, res, next) {
+        return res.render("success",{
+            user:JSON.parse(JSON.stringify(req.user)),
+            phone:phone
+        });
+    },
     async register(req, res, next) {
         return res.render("register", {
             layout: "auth/main"

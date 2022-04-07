@@ -15,7 +15,7 @@ var count = 0;
 function resultListData(res){
     count++;
     $('#registeredServices tbody').append(
-        '<tr><td>' + count + ' </td><td>' + res.productName + '</td> <td> ' + res.serviceType + '</td><td>' + res.date + '</td><td>' + res.time + '</td><td>' + res.status + '</td><td style="width:200px; max-widh:200px;">' + res.info + '</td></tr>'
+        '<tr><td>' + count + ' </td><td>' + res.productName + '</td> <td> ' + res.serviceType + '</td><td>' + res.date + '</td><td>' + res.time + '</td><td style="width:200px; max-widh:200px;">' + res.info + '</td><td">' + res.status + '</td></tr>'
     );
 }
 

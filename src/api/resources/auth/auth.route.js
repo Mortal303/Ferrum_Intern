@@ -3,9 +3,15 @@ import loginController from "./login.controller.js";
 import registerController from "./register.controller.js";
 import VerifyEmailAccount from "./VerifyEmailController.js";
 import forgotPasswordController from "./ForgotPasswordController.js";
+import editDetailsController from "./editDetailsController.js"
+
+
 import {
     sanitize
 } from "../../../middleware/sanitizer";
+import {
+    jwtStrategy
+} from "../../../middleware/strategy";
 
 export const authRouter = express.Router();
 
@@ -21,3 +27,7 @@ authRouter
 authRouter
     .route("/reset-password")
     .post(sanitize(), forgotPasswordController.resetPassword);
+
+authRouter
+    .route("/editDetails")
+    .post(sanitize(), jwtStrategy, editDetailsController.editDetails); 

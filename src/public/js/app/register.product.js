@@ -11,9 +11,12 @@ function clear() {
     $("#msg").html("");
 }
 
+var count = 0;
+
 function resultListData(res){
+    count++;
     $('#registeredProducts').append(
-        '<tr><td>' + res.sno + ' </td><td>' + res.productName + '</td> <td> ' + res.barcodeResult + '</td><td><a href="/api/domain/report-download/' + res.token + '">Download Invoice</a></td></tr>'
+        '<tr><td>' + count + ' </td><td>' + res.productName + '</td> <td> ' + res.barcodeResult + '</td><td><a href="/api/domain/report-download/' + res.token + '">Download Invoice</a></td></tr>'
     );
 }
 
@@ -42,11 +45,9 @@ function validate() {
 }
 
 function validateData() {
-    var sno = $('#sn').val();
     var date = $('#date').val();
     var productname = $('#productname').val();
     var data = {
-        sno: sno,
         date: date,
         productname: productname,
         barcodeResults: barcodeResults,
