@@ -90,7 +90,7 @@ var selectProduct = async function (req, res, next) {
             }
         }
         write.data[index].price = price;
-        var orders;
+        var orders={ };
         await instance.orders.create({
             amount: price * 100,
             currency: "INR",
