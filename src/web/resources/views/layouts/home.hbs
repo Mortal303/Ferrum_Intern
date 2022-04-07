@@ -76,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+    <center><div id="msg"></div></center>
                 <div class="row d-flex justify-content-center ">
                     <div class="col-lg-9 shadow p-3 mb-5 bg-body rounded mt-5">
 
@@ -84,21 +85,21 @@
                             <h4>New User! Enter details </h4>
 
                         </div>
-                        <form>
+                        <form onsubmit="editDetails(); return false;">
                             <div>
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3">
                                         <label for="validationDefault01">First name</label>
                                         <input type="text" class="form-control" id="validationDefault01"
-                                            value="{{user.firstName}}" required>
+                                            value="{{user.firstName}}" readonly>
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="validationDefault02">Last name</label>
                                         <input type="text" class="form-control" id="validationDefault02"
-                                            value="{{user.lastName}}" required>
+                                            value="{{user.lastName}}" readonly>
                                     </div>
                                     <div class="col-md-4 mb-3">
-                                        <label for="validationDefaultUsername">Username</label>
+                                        <label for="validationDefaultUsername">Email</label>
                                         <input type="email" class="form-control" id="validationDefault02"
                                             value="{{user.email}}"  readonly>
 
@@ -111,7 +112,7 @@
                                     <div class="col-md-3 mb-3">
                                         <label for="validationDefault03">Enter your phone number:</label>
                                         <input type="tel" class="form-control" id="validationDefault03"
-                                            value="{{user.phone}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                                            value="{{user.phone}}" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" readonly>
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="validationDefault04">City</label>
@@ -275,6 +276,8 @@
 <!--Start of Tawk.to Script-->
 <!--End of Tawk.to Script-->
 <script src="static/js/lib/jquery.min.js"></script>
+<script src="static/js/api.js"></script>
+<script src="static/js/app/home.js"></script>
 <script src="static/js/lib/calendar-2/moment.latest.min.js"></script>
 <script src="static/js/lib/calendar-2/pignose.calendar.min.js"></script>
 {{!--

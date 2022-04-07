@@ -90,6 +90,9 @@ var api = {
     resetPassword: function (data, success, error) {
       return query("/reset-password/", "POST", data, 1, success, error);
     },
+    editDetails: function (data, success, error) {
+      return query("/editDetails/", "POST", data, 1, success, error);
+    },
   },
   product: {
     list: function (success, error) {

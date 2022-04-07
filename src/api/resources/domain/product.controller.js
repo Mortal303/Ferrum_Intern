@@ -35,16 +35,19 @@ function Token() {
 
 var list = async function (req, res, next) {
     try {
-        var data = [];
-        for (var index = 0; index < prodList.data.length; index++) {
-            data.push(prodList.data[index]);
-        }
-        // console.log(data);
+        var products = await db.registeredProduct.findAll({
+            where:{
+                userId:req.user.id
+            }
+        });
+        products = JSON.parse(JSON.stringify(products));
+        
         return res.status(200).json({
             message: "Fetched Data",
-            data: data
+            data: products
         });
     } catch (err) {
+        console.log(err);
         return res.status(403).json({
             message: "Some error occured",
             err: err
@@ -56,12 +59,20 @@ var selectProduct = async function (req, res, next) {
     //console.log(req.body);
     if (req.body.productName) {
         var index, i, found, write, price;
-        for (index = 0; index < product.data.length; index++) {
-            if (product.data[index].name == req.body.name) {
-                found = product.data[index];
-                break;
+        var product = await db.registeredProduct.findOne({
+            where:{
+                userid:req.user.id,
+                productName:req.body.productName
             }
-        }
+        });
+        product = JSON.parse(JSON.stringify(product));
+        var found = await db.paymentProduct.findOne({
+            where:{
+                userid:req.user.id,
+                productName:req.body.productName
+            }
+        })
+        found = JSON.parse(JSON.stringify(found));
         if (found) {
             //update
             var productData = {
@@ -70,29 +81,27 @@ var selectProduct = async function (req, res, next) {
                 address: req.body.address,
                 date_time: req.body.date_time,
             }
-            product.data[index] = productData;
-            write = product;
+            await db.paymentProduct.update( productData , {
+                where:{
+                    userId:req.user.id,
+                    productName:req.body.productName
+                }
+            })  
         } else {
             //create
             var productData = {
+                userId:req.user.id,
                 productName: req.body.productName,
                 name: req.body.name,
                 address: req.body.address,
                 date_time: req.body.date_time,
             }
-            product.data.push(productData);
-            write = product;
+            await db.paymentProduct.create( productData ) ;
         }
-        for (i = 0; i < prodList.data.length; i++) {
-            if (prodList.data[i].productName == req.body.productName) {
-                price = prodList.data[i].price;
-                break;
-            }
-        }
-        write.data[index].price = price;
+       
         var orders={ };
         await instance.orders.create({
-            amount: price * 100,
+            amount: 100 * 100,
             currency: "INR",
             receipt: "receipt#1",
         }, function (err, order) {
@@ -111,7 +120,7 @@ var selectProduct = async function (req, res, next) {
     } else {
         return res.status(403).json({
             success: false,
-            message: "Null Value Passed"
+            message: "No Product Found"
         });
     }
 }
@@ -184,7 +193,6 @@ var registerProduct = async function (req, res, next) {
         try {
             await db.registeredProduct.create({
                 userId: req.user.id,
-                sno: req.body.sno,
                 date: req.body.date,
                 productName: req.body.productname,
                 barcodeResult: req.body.barcodeResults,

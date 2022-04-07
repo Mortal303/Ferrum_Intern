@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     productName: DataTypes.STRING,
     barcodeResult: DataTypes.STRING,
     token: DataTypes.STRING,
+    price:DataTypes.STRING,
   }, {
     timestamps: true,
     paranoid: true

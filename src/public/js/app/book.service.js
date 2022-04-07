@@ -1,3 +1,11 @@
+function addOption(res) {
+    var select = $("#select_product");
+    var options = res.data;
+    for (var i = 0; i < options.length; i++) {
+        var opt = options[i].productName;
+        select.append($('<option>').text(opt).attr('value', opt));
+    }
+}
 function successMsg(msg) {
     $("#msg").append('<span style="color: green;">' + msg.message + "</span>");
 }
@@ -51,3 +59,19 @@ function registerService() {
         }
     );
 }
+
+function productList() {
+    api.product.list(
+        function (res) {
+            // console.log(res);
+            addOption(res);
+        },
+        function (err) {
+            console.log(err);
+        }
+    );
+}
+
+$(document).ready(function () {
+    productList();
+});
