@@ -1,0 +1,6 @@
+# Ferrum is a Web startup which sells copper utensils to its customers.
+This repository consists of service based website where the easy servicing and avialbility of products are being suppied.
+
+# How to run this repository
+Use folowing command to run
+1. npm start 
